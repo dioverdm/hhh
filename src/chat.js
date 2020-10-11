@@ -17,7 +17,7 @@ function Chat() {
                     <p>Last seen at...</p>
                     </div>
 
-                <div className="chat__headerInfoRight"></div>
+                <div className="chat__headerInfoRight">
 
 
                     <IconButton>
@@ -30,8 +30,20 @@ function Chat() {
                     <MoreVert/>
                     </IconButton>
                     </div>
+                </div>
 
-        </div>
+
+
+            <div className="chat__body">
+                    <p className="chat__message">
+                    <span className ="chat__name">Wilou</span>
+                    This is the message
+                    <span className = "chat__timestamp">{new Date().toUTCString()}
+                    </span>
+                    </p>
+            </div>
+    </div>
+
     )
 }
 
