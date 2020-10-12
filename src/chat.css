@@ -90,6 +90,10 @@
 }
 
 .chat__footer > form > button{
-    flex:1;
-    display: flex;
+    display: none;
+}
+
+.chat__footer > .MuiSvgIcon-root{
+    padding: 10px;
+    color: gray;
 }
