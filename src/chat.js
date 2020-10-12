@@ -56,8 +56,10 @@ function Chat() {
                         <InsertEmoticonIcon/>
                         <form>
                             <input placeholder="Type a message" type="text"/>
+                            <button type="Submit">Send a message
+                            </button>
                         </form>
-                        <button type="Submit">Send a message</button>
+
                         <MicIcon/>
                     </div>
 
