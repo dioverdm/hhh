@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import Sidebar from './sidebar';
-import Chat from './chat'
+import Chat from './chat';
+import Pusher from "pusher-js";
 
 
 // 2 composants un menu avec les conversation et une fenêtre de chat
