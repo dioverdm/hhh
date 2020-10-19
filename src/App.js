@@ -53,7 +53,7 @@ function App() {
 
 
 
-    <Chat />
+    <Chat messages={messages}/>
 
 
 
