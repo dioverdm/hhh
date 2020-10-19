@@ -7,6 +7,8 @@ import axios from "./axios"
 
 
 // 2 composants un menu avec les conversation et une fenêtre de chat
+// axios pour afficher les données JSON
+// à chaque Fetch, l'app affiche le dernier message avec le 1er useEffect et messages/sync
 
 function App() {
 
