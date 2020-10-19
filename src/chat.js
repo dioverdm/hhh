@@ -1,12 +1,30 @@
 import { AttachFile, MoreVert, SearchOutlined } from '@material-ui/icons';
 import React from  'react';
+import {useState} from 'react';
 import "./chat.css";
 import { IconButton, Avatar } from '@material-ui/core';
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import MicIcon from "@material-ui/icons/Mic"
+import axios from "./axios"
 
+// sendMessage la fonction onclick qui empeche le refresh quand on utilise le formulaire
+//
 
 function Chat({messages}) {
+    const [input, setInput] = useState("");
+    const sendMessage = async (e) => {
+        e.preventDefault();
+        await axios.post('/messages/new', {
+            message: input,
+            name: "Google Authentication with Firebase",
+            timestamp: "just now",
+            received: true, 
+        });
+
+        setInput('')
+
+    };
+ 
     return (
         <div className="chat">
             <div className="chat__header">
@@ -58,8 +76,8 @@ function Chat({messages}) {
                     <div className="chat__footer">
                         <InsertEmoticonIcon/>
                         <form>
-                            <input placeholder="Type a message" type="text"/>
-                            <button type="Submit">Send a message
+                            <input value = {input} onChange = {(e) => setInput(e.target.value)} placeholder="Type a message" type="text"/>
+                            <button onClick = {sendMessage} type="Submit">Send a message
                             </button>
                         </form>
 
