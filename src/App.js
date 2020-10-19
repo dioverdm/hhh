@@ -9,6 +9,7 @@ import axios from "./axios"
 // 2 composants un menu avec les conversation et une fenêtre de chat
 // axios pour afficher les données JSON
 // à chaque Fetch, l'app affiche le dernier message avec le 1er useEffect et messages/sync
+// https://pusher.com/docs/channels/using_channels/events
 
 function App() {
 
@@ -26,12 +27,19 @@ function App() {
       cluster: 'eu'
     });
 
-    var channel = pusher.subscribe('messages');
-    channel.bind('inserted', (data) => {
-      alert(JSON.stringify(data));
+    const channel = pusher.subscribe("messages");
+    channel.bind("inserted", (newMessage) => {
+      // alert(JSON.stringify(newMessage)); Utiliser pour le message d'alerte
+      setMessages([...messages, newMessage]);
     });
-  }, []);
 
+    return () => {
+      channel.unbind_all();
+      channel.unsubscribe();
+    };
+  }, [messages]);
+
+  // dans le tableau précédent, ajouter messages pour faire le cumul
 
   console.log(messages);
 
