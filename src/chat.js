@@ -17,7 +17,7 @@ function Chat({messages}) {
         await axios.post('/messages/new', {
             message: input,
             name: "Google Authentication with Firebase",
-            timestamp: "just now",
+            timestamp: new Date().toUTCString(),
             received: true, 
         });
 
