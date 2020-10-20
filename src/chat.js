@@ -22,7 +22,7 @@ function Chat({messages}) {
         });
 
         setInput('')
-
+        // Nettoyage de l'input quand on rafraichit la page
     };
  
     return (
@@ -75,7 +75,7 @@ function Chat({messages}) {
 
                     <div className="chat__footer">
                         <InsertEmoticonIcon/>
-                        <form>
+                        <form> 
                             <input value = {input} onChange = {(e) => setInput(e.target.value)} placeholder="Type a message" type="text"/>
                             <button onClick = {sendMessage} type="Submit">Send a message
                             </button>
