@@ -3,7 +3,13 @@ import './App.css';
 import Sidebar from './sidebar';
 import Chat from './chat';
 import Pusher from "pusher-js";
-import axios from "./axios"
+import axios from "./axios";
+import Login from "./login"
+
+
+// BrowserRouter is the router implementation for HTML5 browsers (vs Native).
+// Route is the conditionally shown component based on matching a path to a URL.
+// Switch returns only the first matching route rather than all matching routes.
 
 
 // 2 composants un menu avec les conversation et une fenêtre de chat
@@ -43,22 +49,15 @@ function App() {
 
   console.log(messages);
 
+  // const [user, setUser] = useState(null);
+
   return (
     <div className="app">
-      <div className="app__body">
-
-
-   
-    <Sidebar />
-
-
-
-    <Chat messages={messages}/>
-
-
-
-
-    </div>
+        <div className="app__body">
+        <Sidebar />
+        <Chat messages={messages}/>
+        </div>
+      
     </div>
   );
 }
